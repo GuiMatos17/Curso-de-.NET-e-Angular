@@ -7,32 +7,57 @@
     <input type="text" class="form-control mr-2" placeholder="Buscar">
   </div>
   <div class="col-12">
-    <button class="btn btn-outline-success">Buscar</button>
+    <button class="btn btn-danger">Buscar</button>
   </div>
 </form>
 <table class="table table-striped">
   <thead class="table-dark">
     <tr>
       <th>#</th>
-      <th>Imagem</th>
+      <th>
+        Imagem
+          <button type="button" class="btn btn-outline-light btn-sm" data-bs-toggle="collapse" data-bs-toggle="#col"
+          (click)="alterarImagem()">
+            {{!exibirImagem ? '🡲' : '🡳'}}
+          </button>
+      </th>
       <th>Tema</th>
       <th>Local</th>
       <th>Data</th>
       <th>Qtd Pessoas</th>
       <th>Lote</th>
-      <th>Opções</th>
+      <th>
+        <div class="text-center">Opções</div>
+      </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="eventos && eventos.length">
     <tr *ngFor="let evento of eventos">
       <td>{{evento.eventosId}}</td>
-      <td>{{evento.imagemURL}}</td>
+      <td>
+        <img [collapse]="!exibirImagem"
+            [isAnimated]="true"
+            src="/assets/{{evento.imagemURL}}"
+            [style.width.px]="larguraImagem"
+            [style.margin.px]="margemImagem">
+      </td>
       <td>{{evento.tema}}</td>
       <td>{{evento.local}}</td>
       <td>{{evento.dataEvento}}</td>
       <td>{{evento.qtdPessoas}}</td>
       <td>{{evento.lote}}</td>
-      <td></td>
+      <td>
+        <div class="text-center">
+          <button type="button" class="btn btn-dark">...</button>
+        </div>
+      </td>
     </tr>
   </tbody>
+  <tfoot *ngIf="!eventos.length">
+    <tr>
+      <td colspan="8" class="text-center">
+        <h4><b>Nenhum evento encontrado!</b></h4>
+      </td>
+    </tr>
+  </tfoot>
 </table>
