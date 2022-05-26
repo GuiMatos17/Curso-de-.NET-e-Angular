@@ -1,15 +1,15 @@
 <h2>Eventos</h2>
 <hr>
-
-<form action="" class="row row-cols-lg-auto g-3 align-items-center mb-2">
-
+<div class="row row-cols-lg-auto g-3 align-items-center mb-2">
   <div class="col-12">
-    <input type="text" class="form-control mr-2" placeholder="Buscar">
+    <input type="text"
+           class="form-control mr-2"
+           placeholder="Buscar"
+           [(ngModel)]="filtroLista">
   </div>
-  <div class="col-12">
     <button class="btn btn-danger">Buscar</button>
-  </div>
-</form>
+</div>
+<!--<h3>Filtro: {{filtroLista}}</h3>><!-->
 <table class="table table-striped">
   <thead class="table-dark">
     <tr>
@@ -32,7 +32,7 @@
     </tr>
   </thead>
   <tbody *ngIf="eventos && eventos.length">
-    <tr *ngFor="let evento of eventos">
+    <tr *ngFor="let evento of eventosFiltrados">
       <td>{{evento.eventosId}}</td>
       <td>
         <img [collapse]="!exibirImagem"
@@ -48,7 +48,7 @@
       <td>{{evento.lote}}</td>
       <td>
         <div class="text-center">
-          <button type="button" class="btn btn-dark">...</button>
+          <button type="button" class="btn btn-dark btn-sm">...</button>
         </div>
       </td>
     </tr>
