@@ -30,13 +30,13 @@ namespace ProEventos.API.Data.Migrations
                     b.Property<string>("Local")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Lote")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("QtdPessoas")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Tema")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Vendas")
                         .HasColumnType("TEXT");
 
                     b.HasKey("EventosId");
