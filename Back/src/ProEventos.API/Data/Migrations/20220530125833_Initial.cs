@@ -14,7 +14,7 @@ namespace ProEventos.API.Data.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Local = table.Column<string>(type: "TEXT", nullable: true),
                     DataEvento = table.Column<string>(type: "TEXT", nullable: true),
-                    Tema = table.Column<string>(type: "TEXT", nullable: true),
+                    Evento = table.Column<string>(type: "TEXT", nullable: true),
                     QtdPessoas = table.Column<int>(type: "INTEGER", nullable: false),
                     Vendas = table.Column<string>(type: "TEXT", nullable: true),
                     ImagemURL = table.Column<string>(type: "TEXT", nullable: true)

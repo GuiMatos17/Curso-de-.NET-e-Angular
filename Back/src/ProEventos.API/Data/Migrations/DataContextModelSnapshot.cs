@@ -24,6 +24,9 @@ namespace ProEventos.API.Data.Migrations
                     b.Property<string>("DataEvento")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Evento")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ImagemURL")
                         .HasColumnType("TEXT");
 
@@ -32,9 +35,6 @@ namespace ProEventos.API.Data.Migrations
 
                     b.Property<int>("QtdPessoas")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Tema")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Vendas")
                         .HasColumnType("TEXT");

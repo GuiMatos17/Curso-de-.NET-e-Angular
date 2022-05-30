@@ -2,14 +2,17 @@
 <hr>
 <div class="row row-cols-lg-auto g-3 align-items-center mb-2">
   <div class="col-12">
-    <input type="text"
-           class="form-control mr-2"
-           placeholder="Buscar"
-           [(ngModel)]="filtroLista">
+    <label>Filtro: </label>
   </div>
-    <button class="btn btn-danger">Buscar</button>
+  <div>
+    <input type="text"
+      class="form-control me-2"
+      placeholder="Buscar"
+      [(ngModel)]="filtroLista"
+    >
+  </div>
 </div>
-<!--<h3>Filtro: {{filtroLista}}</h3>><!-->
+<!--<h3>Filtro: {{filtroLista}}</h3>-->
 <table class="table table-striped">
   <thead class="table-dark">
     <tr>
@@ -21,7 +24,7 @@
             {{!exibirImagem ? '🡲' : '🡳'}}
           </button>
       </th>
-      <th>Tema</th>
+      <th>Eventos</th>
       <th>Local</th>
       <th>Data</th>
       <th>Qtd Pessoas</th>
@@ -39,16 +42,18 @@
             [isAnimated]="true"
             src="/assets/{{evento.imagemURL}}"
             [style.width.px]="larguraImagem"
-            [style.margin.px]="margemImagem">
+            [style.margin.px]="margemImagem"
+            [style.height.px]="alturaImagem">
       </td>
-      <td>{{evento.tema}}</td>
+      <td>{{evento.evento}}</td>
       <td>{{evento.local}}</td>
       <td>{{evento.dataEvento}}</td>
       <td>{{evento.qtdPessoas}}</td>
       <td>{{evento.vendas}}</td>
       <td>
         <div class="text-center">
-          <button type="button" class="btn btn-dark btn-sm">...</button>
+          <button type="button" class="btn btn-dark btn-sm me-2">Editar</button>
+          <button type="button" class="btn btn-danger btn-sm">Excluir</button>
         </div>
       </td>
     </tr>
@@ -62,4 +67,4 @@
   </tfoot>
 </table>
 
-<!--{{eventos | json}}!-->
+<!--{{eventos | json}}-->

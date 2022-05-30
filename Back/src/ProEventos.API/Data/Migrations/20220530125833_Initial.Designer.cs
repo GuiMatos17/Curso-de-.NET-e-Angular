@@ -8,7 +8,7 @@ using ProEventos.API.Data;
 namespace ProEventos.API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220526204432_Initial")]
+    [Migration("20220530125833_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,6 +26,9 @@ namespace ProEventos.API.Data.Migrations
                     b.Property<string>("DataEvento")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Evento")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ImagemURL")
                         .HasColumnType("TEXT");
 
@@ -34,9 +37,6 @@ namespace ProEventos.API.Data.Migrations
 
                     b.Property<int>("QtdPessoas")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Tema")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Vendas")
                         .HasColumnType("TEXT");
